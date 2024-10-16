@@ -1,0 +1,18 @@
+body {
+    margin: 20px;
+  }
+
+.js-button {
+    width: 200px;
+    height: 40px;
+    background-color: blue;
+
+}
+
+.js-button:hover {
+  width: 200px;
+  height: 40px;
+  background-color:red
+
+}
+

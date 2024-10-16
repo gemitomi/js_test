@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mail.css"> 
+    <title>Document</title>
+</head> 
+<body>
+    <div class="container">
+        
+            <div class="container">
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <h3>Get In touch</h3>
+                    <input type="text" id="name" placeholder="Your Name" autocomplete="off">    
+                    <input type="email" id="email" placeholder="Email id" autocomplete="off">    
+                    <input type="text" id="subject" placeholder="Subject" autocomplete="off">    
+                    <textarea id="message" rows="4" placeholder="How can we help you"></textarea>
+                    <button id="btn">Send</button>    
+                </form>
+            </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click',function(e){
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            var body = 'Nev: ' + name + '<br/> email: ' + email + '<br/> Targy: ' + subject + '<br/> Uzenet: ' + message;
+            Email.send({
+                SecureToken : "b5f81e54-9cb3-4e57-963c-0b8529163a49",
+                To : 'info@webrabbit.hu',
+                From : "gematomchina@gmail.com",
+                Subject : "Conatact message",
+                Body : body
+            }).then(
+                message => alert(message)
+            ); 
+        })
+        
+        
+    
+            
+        
+    </script>
+</body>
+</html>

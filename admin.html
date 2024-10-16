@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adminisztráció</title>
+    <link rel="stylesheet" href="admin.css">
+    
+</head>
+<body>
+    
+    <div class="container">
+    
+        <div class="formBx">
+            
+            <form>
+                <h2>Tréning neve:</h2>
+                <div class="inputBox">
+                    <input type="text" id="name" name="name">
+                </div>
+                <h2>Időpont:</h2>
+                <div class="inputBox">
+                    <input type="text" id="time" name="time">
+                </div>
+                <h2>Ár:</h2>
+                <div class="inputBox">
+                    <input type="text" id="price" name="price">
+                </div>
+                <h2>Tréning leírása</h2>
+                <div class="inputBox">
+                    <textarea id="message"></textarea>
+                </div>
+                <div class="inputBox">
+                    <button id="btn" onclick="myFunc();">Mentés</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script>
+    function myFunc(){
+        alert("nmn");
+        const fs = require('fs')
+    
+        function loadJSON(filename = '') {
+            return JSON.parse(
+                fs.existsSync(filename)
+                ? fs.readFileSync(filename).toString()
+                : '""'
+            )
+        }
+    
+        function saveJSON(filename = '', json = '""') {
+            return fs.writeFileSync(
+                filename, JSON.stringify(json, null, 2)
+            )
+        }
+    
+        const data = loadJSON('data.json')
+    
+        ;['d', 'ez', 'z'].forEach(letter => 
+            data.files.push(letter)
+        );
+    
+        saveJSON('data.json', data)
+    
+    }
+    
+    
+</script>
+        <!--<script>
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        </script>-->
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+.container{
+    background-color: aquamarine;
+    margin: 20px;
+    padding: 20px;
+}
+
+.inputBox textarea{
+    min-height: 200px;
+    min-width: 1000px;
+}
